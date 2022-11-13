@@ -1,38 +1,21 @@
-import './petCard.css'
-import NewDogModal from './NewModalGod'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import PetModal from '../PetModal/PetModal';
 
-const DogCard = ({ dog }) => {
-
-
+function PetCard() {
     return (
-        <div className="dog-card-container">
-            <div className="card text-bg-dark dog-card">
-                {dog.adopted && <span className="adopted-mark">✅</span>}
-                <img src={dog.src} className="dog-card-image" alt="..." />
-                <div className="card-img-overlay dog-details-container ">
-                    <div>
-                        <h5 className="dog-card-title card-title">{dog.dogName}</h5>
-                    </div>
-                    <div>
-                        <p className="dog-card-description">{dog.shortDescription}</p>
-                    </div>
-                </div>
-                <div className="row dog-details">
-                    <div className="col">
-                        {dog.gender}
-                    </div>
-                    <div className="col">
-                        {dog.age}
-                    </div>
-                    <div className="col">
-                        {dog.size}
-                    </div>
-                </div>
-            </div>
-            <NewDogModal dog={dog}></NewDogModal>
-
-        </div>
-    )
+        <Card style={{ width: '28rem' }}>
+            <Card.Img variant="top" src='https://mdbootstrap.com/img/new/standard/nature/184.webp' />
+            <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                </Card.Text>
+                <PetModal></PetModal>
+            </Card.Body>
+        </Card>
+    );
 }
 
-export default DogCard
+export default PetCard;
