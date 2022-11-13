@@ -1,21 +1,57 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import PetModal from '../PetModal/PetModal';
+import Modal from '../PetModal/Modal';
+import './petCard.css'
+import { IoMdMore } from 'react-icons/io'
 
-function PetCard() {
+function PetCard({ report }) {
     return (
-        <Card style={{ width: '28rem' }}>
-            <Card.Img variant="top" src='https://mdbootstrap.com/img/new/standard/nature/184.webp' />
-            <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                </Card.Text>
-                <PetModal></PetModal>
-            </Card.Body>
-        </Card>
+        <div className="card mt-4" style={{ width: "22rem" }}>
+            <img src={report.photo} className="card-img-top pet-card-img" alt="..." />
+            <div className="card-body">
+                <h5 className="card-title">{report.type}</h5>
+                <h5 className="card-title">{report.problem}</h5>
+                <h5 className="card-title">{report.place}</h5>
+                <h5 className="card-title">{report.time}</h5>
+                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div className='card-body-btn-container'>
+                    <Modal report={report} title='פרטים נוספים:' modalButtonName='פרטים נוספים' time={report.time} >
+                        <div dir='rtl'>סטאטוס:</div>
+                        <div className='modal-img'>
+                            <div className='modal-img-container'>
+                                <img className='modal-img-container-image' src={report.photo} alt="image" />
+                            </div>
+                        </div>
+
+                        <div dir='rtl'>תיאור: {report.problem}</div>
+                        <div dir='rtl'>שם מדווח: {report.name}</div>
+                        <div dir='rtl'>טלפון: {report.phoneNumber}</div>
+                        <div dir='rtl'>מיקום: {report.place}</div>
+                        <div dir='rtl'>אלים: {report.vailent}</div>
+                        <div dir='rtl'>הערות: {report.exstraDetails}</div>
+                    </Modal>
+
+                    <div className="btn-group dropup">
+                        <button type="button" className="remove-borders" data-bs-toggle="dropdown" aria-expanded="false" data-bs-placement="bottom" data-bs-title="Tooltip on bottom">
+                            <div className='more-options-icon-container'>
+                                <IoMdMore />
+                            </div>
+                            <div className='popper'>
+                                <p>More options</p>
+                            </div>
+                        </button>
+                        <ul className="dropdown-menu">
+                            <li><a className="dropdown-item" href="#">Copy link</a></li>
+                            <li><a className="dropdown-item" href="#">End auction</a></li>
+                            <li><hr className="dropdown-divider" /></li>
+                            <li><a className="dropdown-item" href="#">Delist</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div >
     );
 }
 
 export default PetCard;
+
+// type={type} problem={problem} place={place} time={time}
