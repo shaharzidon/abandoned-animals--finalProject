@@ -53,5 +53,3 @@ function PetCard({ report }) {
 }
 
 export default PetCard;
-
-// type={type} problem={problem} place={place} time={time}
