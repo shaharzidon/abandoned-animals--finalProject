@@ -1,7 +1,7 @@
 import { useState } from "react"
-import './modal.css'
+import './moreDetailsModal.css'
 
-const Modal = ({ title, size, addOverflow, btnType, modalButtonName, className, body, children, time }) => {
+const MoreDetailsModal = ({ title, size, addOverflow, btnType, modalButtonName, className, body, children, time }) => {
 
     const [open, setOpen] = useState(false)
 
@@ -44,4 +44,4 @@ const Modal = ({ title, size, addOverflow, btnType, modalButtonName, className, 
     )
 }
 
-export default Modal
+export default MoreDetailsModal

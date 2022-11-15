@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import Modal from '../PetModal/Modal';
-import './petCard.css'
+import MoreDetailsModal from '../MoreDetailsModal/MoreDetailsModal';
+import './animalCard.css'
 import { IoMdMore } from 'react-icons/io'
 
-function PetCard({ report }) {
+function AnimalCard({ report }) {
     const [petStatus, SetPetStatus] = useState("")
     return (
         <div className="card mt-4" style={{ width: "22rem" }}>
@@ -15,7 +15,7 @@ function PetCard({ report }) {
                 <h5 className="card-title">{report.time}</h5>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <div className='card-body-btn-container'>
-                    <Modal report={report} title='פרטים נוספים:' modalButtonName='פרטים נוספים' time={report.time} >
+                    <MoreDetailsModal report={report} title='פרטים נוספים:' modalButtonName='פרטים נוספים' time={report.time} >
                         <div dir='rtl'>סטאטוס:</div>
                         <div className='modal-img'>
                             <div className='modal-img-container'>
@@ -29,7 +29,7 @@ function PetCard({ report }) {
                         <div dir='rtl'>מיקום: {report.place}</div>
                         <div dir='rtl'>אלים: {report.vailent}</div>
                         <div dir='rtl'>הערות: {report.exstraDetails}</div>
-                    </Modal>
+                    </MoreDetailsModal>
 
                     <div className="btn-group dropup">
                         <button type="button" className="remove-borders" data-bs-toggle="dropdown" aria-expanded="false" data-bs-placement="bottom" data-bs-title="Tooltip on bottom">
@@ -57,4 +57,4 @@ function PetCard({ report }) {
     );
 }
 
-export default PetCard;
+export default AnimalCard;
