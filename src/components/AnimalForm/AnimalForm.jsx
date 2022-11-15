@@ -112,31 +112,12 @@ const AnimalForm = ({ }) => {
                                             <p className="error-message">{errors.color && touched.color && errors.color}</p>
                                         </div>
                                     </div>
-                                    <button type="button" className="btn btn-primary" onClick={() => {
-                                        setPage(page - 1)
-                                    }}>הבא</button>
-                                    <div dir='rtl'>שדות חובה מסומנים ב*</div>
-                                    {/* page 2 */}
-                                </div> : <div className='form-container-page2'>
-                                    <div className='form-container-page2-first row'>
-                                        <div className='input-title-container'>
-                                            <p dir='rtl'>העלאת תמונה</p>
-                                        </div>
-                                        <div className="input-group mb-3 col-sm">
-                                            {/* <label dir='rtl' className="input-group-text" for="inputGroupFile01">בחרו קובץ</label> */}
-                                            <input name="picture" type="file" className="form-control" id="inputGroupFile01" placeholder="העלאה" onChange={handleChange} value={values.picture} onBlur={handleBlur} />
-                                        </div>
-                                        <div className="form-floating col-sm">
-                                            <input name="place" type="text" className="form-control" id="floatingInput" placeholder="מיקום" onChange={handleChange} value={values.place} onBlur={handleBlur} />
-                                            <label dir='rtl' for="floatingInput" className="form-label">מיקום (שכונה, רחוב, מספר בית)*</label>
-                                            <p className="error-message">{errors.place && touched.place && errors.place}</p>
-                                        </div>
-                                    </div>
                                     <div className='radio-btns-container'>
                                         <div className='input-title-container'>
                                             <p dir='rtl'>חיה אלימה/תוקפנית</p>
                                         </div>
-                                        <div className="form-check form-check-inline">
+
+                                        <div className="form-check form-check-inline ">
                                             <input name="voilent" className="form-check-input" type="radio" id="inlineRadio1" placeholder="לא" onChange={handleChange} value={values.voilent} />
                                             <label dir='rtl' className="form-check-label" for="inlineRadio1">לא</label>
                                         </div>
@@ -145,25 +126,47 @@ const AnimalForm = ({ }) => {
                                             <label dir='rtl' className="form-check-label" for="inlineRadio2">כן</label>
                                         </div>
                                     </div>
+                                    <button type="button" className="btn btn-primary mt-3" onClick={() => {
+                                        setPage(page - 1)
+                                    }}>הבא</button>
+                                    <div className='must-asterisk' dir='rtl'>שדות חובה מסומנים ב*</div>
+                                    {/* page 2 */}
+                                </div> : <div className='form-container-page2'>
+                                    <div className='form-container-page2-first row'>
+                                        <div className='input-title-container'>
+                                            <p dir='rtl'>זמן הדיווח*</p>
+                                        </div>
+                                        <div className="form-floating col-sm">
+                                            <input name="when" type="date" className="form-control" id="floatingInput" placeholder="זמן הדיווח" onChange={handleChange} value={values.when} onBlur={handleBlur} />
+                                            <label dir='rtl' for="floatingInput" className="form-label"></label>
+                                            <p className="error-message">{errors.when && touched.when && errors.when}</p>
+                                        </div>
+                                        <div className="form-floating col-sm">
+                                            <input name="place" type="text" className="form-control" id="floatingInput" placeholder="מיקום" onChange={handleChange} value={values.place} onBlur={handleBlur} />
+                                            <label dir='rtl' for="floatingInput" className="form-label">מיקום (שכונה, רחוב, מספר בית)*</label>
+                                            <p className="error-message">{errors.place && touched.place && errors.place}</p>
+                                        </div>
+                                    </div>
                                     <div className='input-title-container'>
-                                        <p dir='rtl'>זמן הדיווח*</p>
+                                        <p dir='rtl'>העלאת תמונה</p>
                                     </div>
-                                    <div className="form-floating">
-                                        <input name="when" type="date" className="form-control" id="floatingInput" placeholder="" onChange={handleChange} value={values.when} onBlur={handleBlur} />
-                                        <label dir='rtl' for="floatingInput" className="form-label"></label>
-                                        <p className="error-message">{errors.when && touched.when && errors.when}</p>
+                                    <div className="input-group mb-3 ">
+                                        {/* <label dir='rtl' className="input-group-text" for="inputGroupFile01">בחרו קובץ</label> */}
+                                        <input name="picture" type="file" className="form-control" id="inputGroupFile01" placeholder="העלאה" onChange={handleChange} value={values.picture} onBlur={handleBlur} />
                                     </div>
+
                                     <div className="form-floating">
                                         <textarea name='extraDetails' className="form-control" id="floatingInput" rows="3" placeholder="הערות" onChange={handleChange} value={values.extraDetails} onBlur={handleBlur}></textarea>
                                         <label dir='rtl' for="floatingInput" className="form-label">הערות</label>
                                     </div>
-                                    <button type="button" className="btn btn-primary" onClick={() => {
+                                    <div className='form-container-page2-buttons mb-3'></div>
+                                    <button type="button" className="btn btn-primary ms-3" onClick={() => {
                                         setPage(page + 1)
                                     }}>הקודם</button>
-                                    <button type="submit" className="btn btn-primary">שליחה</button>
+                                    <button type="submit" className="btn btn-primary ms-3" >שליחה</button>
                                     <br></br>
                                     <br></br>
-                                    <div dir='rtl'>שדות חובה מסומנים ב*</div>
+                                    <div className='must-asterisk' dir='rtl'>שדות חובה מסומנים ב*</div>
                                 </div>}
                             </form>
                         )}

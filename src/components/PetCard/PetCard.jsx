@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import Modal from '../PetModal/Modal';
 import './petCard.css'
 import { IoMdMore } from 'react-icons/io'
 
 function PetCard({ report }) {
+    const [petStatus, SetPetStatus] = useState("")
     return (
         <div className="card mt-4" style={{ width: "22rem" }}>
             <img src={report.photo} className="card-img-top pet-card-img" alt="..." />
@@ -39,13 +41,13 @@ function PetCard({ report }) {
                             </div>
                         </button>
                         <ul className="dropdown-menu" dir='rtl'>
-                            <li><a className="dropdown-item" dir='rtl'>לא נמצא</a></li>
-                            <li><a className="dropdown-item" dir='rtl'>טופל בשטח ושוחרר</a></li>
-                            <li><a className="dropdown-item" dir='rtl'>טופל בשטח והועבר לוטרינריה</a></li>
-                            <li><a className="dropdown-item" dir='rtl'>הועבר לוטרינריה</a></li>
-                            <li><a className="dropdown-item" dir='rtl'>החיה נמצא מתה בשטח</a></li>
+                            <li><a className="dropdown-item" dir='rtl' onClick={() => SetPetStatus("לא נמצא")}>לא נמצא</a></li>
+                            <li><a className="dropdown-item" dir='rtl' onClick={() => SetPetStatus("טופל בשטח ושוחרר")}>טופל בשטח ושוחרר</a></li>
+                            <li><a className="dropdown-item" dir='rtl' onClick={() => SetPetStatus("טופל בשטח והועבר לוטרינריה")}>טופל בשטח והועבר לוטרינריה</a></li>
+                            <li><a className="dropdown-item" dir='rtl' onClick={() => SetPetStatus("הועבר לוטרינירה")}>הועבר לוטרינריה</a></li>
+                            <li><a className="dropdown-item" dir='rtl' onClick={() => SetPetStatus("החיה נמצאה מתה בשטח")}>החיה נמצאה מתה בשטח</a></li>
                             <li><hr className="dropdown-divider" /></li>
-                            <li><a className="dropdown-item deteleReport" dir='rtl'>מחיקת דיווח</a></li>
+                            <li><a className="dropdown-item deteleReport" dir='rtl' onClick={() => SetPetStatus("מחיקת דיווח")}>מחיקת דיווח</a></li>
                         </ul>
                     </div>
                 </div>
