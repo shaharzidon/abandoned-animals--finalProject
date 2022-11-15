@@ -16,7 +16,6 @@ const Modal = ({ title, size, addOverflow, btnType, modalButtonName, className, 
     const dotsInDate = removeHyphen.join(".")
 
 
-    console.log(dotsInDate);
     return (
         <div className='modal-container'>
             <button type="button" className={`btn btn-${btnType} ${className}`} onClick={() => { handleOpen() }}>{modalButtonName}</button>

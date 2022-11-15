@@ -38,11 +38,14 @@ function PetCard({ report }) {
                                 <p>More options</p>
                             </div>
                         </button>
-                        <ul className="dropdown-menu">
-                            <li><a className="dropdown-item" href="#">Copy link</a></li>
-                            <li><a className="dropdown-item" href="#">End auction</a></li>
+                        <ul className="dropdown-menu" dir='rtl'>
+                            <li><a className="dropdown-item" dir='rtl'>לא נמצא</a></li>
+                            <li><a className="dropdown-item" dir='rtl'>טופל בשטח ושוחרר</a></li>
+                            <li><a className="dropdown-item" dir='rtl'>טופל בשטח והועבר לוטרינריה</a></li>
+                            <li><a className="dropdown-item" dir='rtl'>הועבר לוטרינריה</a></li>
+                            <li><a className="dropdown-item" dir='rtl'>החיה נמצא מתה בשטח</a></li>
                             <li><hr className="dropdown-divider" /></li>
-                            <li><a className="dropdown-item" href="#">Delist</a></li>
+                            <li><a className="dropdown-item deteleReport" dir='rtl'>מחיקת דיווח</a></li>
                         </ul>
                     </div>
                 </div>
