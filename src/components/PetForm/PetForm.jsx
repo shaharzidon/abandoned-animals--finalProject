@@ -139,7 +139,7 @@ const PetForm = ({ }) => {
                                     </div>
 
                                     <button type="button" className="btn btn-primary" onClick={() => {
-                                        setPage(page - 1)
+                                        setPage(page + 1)
                                     }}>הבא</button>
                                     <div className='must-asterisk mt-4' dir='rtl'>שדות חובה מסומנים ב*</div>
                                     {/* page 2 */}
@@ -173,7 +173,7 @@ const PetForm = ({ }) => {
                                     </div>
                                     <div className='form-container-page2-buttons mb-3'></div>
                                     <button type="button" className="btn btn-primary ms-3" onClick={() => {
-                                        setPage(page + 1)
+                                        setPage(page - 1)
                                     }}>הקודם</button>
                                     <button type="submit" className="btn btn-primary ms-3" >שליחה</button>
                                     <br></br>
