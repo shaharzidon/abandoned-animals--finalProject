@@ -1,11 +1,11 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import PetCard from '../PetCard/PetCard'
+import AnimalCard from '../AnimalCard/AnimalCard'
 import axios from 'axios'
-import './cards.css'
+import './animalCards.css'
 
 
-export default function Cards() {
+export default function AnimalCards() {
     const [allReports, setAllReports] = useState([])
     const [counter, setCounter] = useState("")
     const [counterb, setCounterb] = useState(0)
@@ -35,7 +35,7 @@ export default function Cards() {
         <div className='cards-container'>
             {allReports.map((report) => {
                 return (
-                    <PetCard report={report}></PetCard>
+                    <AnimalCard report={report}></AnimalCard>
                 )
             })}
         </div>

@@ -1,10 +1,10 @@
-import './petForm.css'
+import './animalForm.css'
 import { useEffect, useState } from 'react';
 import { Formik } from "formik";
 import * as Yup from "yup";
 // import { useDispatch } from "react-redux";
 // import { update } from '../../redux/slicer/FormsSlice';
-const PetForm = ({ }) => {
+const AnimalForm = ({ }) => {
     const [page, setPage] = useState(0)
     let windowWidth = window.innerWidth;
     const schema = Yup.object().shape({
@@ -20,8 +20,6 @@ const PetForm = ({ }) => {
             .required("נא להכניס את פרטי הדיווח"),
         size: Yup.string()
             .required("נא להכניס את גודל החיה"),
-        type: Yup.string()
-            .required("נא להכניס את סוג החיה"),
         color: Yup.string()
             .required("נא להכניס את צבע החיה"),
         place: Yup.string()
@@ -40,7 +38,6 @@ const PetForm = ({ }) => {
             picture: values.picture,
             place: values.place,
             voilent: values.voilent,
-            type: values.type,
             when: values.when,
             extraDetails: values.extraDetails,
         };
@@ -49,7 +46,7 @@ const PetForm = ({ }) => {
     };
     // const dispatch = useDispatch();
     return (
-        <div className='petform-footer-container'>
+        <div className='footer-container'>
             <div className='form-contact-container'>
                 <div className="form-container">
                     <Formik
@@ -63,7 +60,6 @@ const PetForm = ({ }) => {
                             picture: "",
                             place: "",
                             voilent: "",
-                            type: "",
                             when: "",
                             extraDetails: "",
                         }}
@@ -116,29 +112,21 @@ const PetForm = ({ }) => {
                                             <p className="error-message">{errors.color && touched.color && errors.color}</p>
                                         </div>
                                     </div>
-
-                                    <div className='form-container-page1-fouth row'>
-                                        <div className='radio-btns-container col-sm'>
-                                            <div className='input-title-container'>
-                                                <p dir='rtl'>חיה אלימה/תוקפנית</p>
-                                            </div>
-                                            <div className="form-check form-check-inline ">
-                                                <input name="voilent" className="form-check-input" type="radio" id="inlineRadio1" placeholder="לא" onChange={handleChange} value={values.voilent} />
-                                                <label dir='rtl' className="form-check-label" for="inlineRadio1">לא</label>
-                                            </div>
-                                            <div className="form-check form-check-inline">
-                                                <input name="voilent" className="form-check-input" type="radio" id="inlineRadio2" placeholder="כן" onChange={handleChange} value={values.voilent} />
-                                                <label dir='rtl' className="form-check-label" for="inlineRadio2">כן</label>
-                                            </div>
+                                    <div className='radio-btns-container'>
+                                        <div className='input-title-container'>
+                                            <p dir='rtl'>חיה אלימה/תוקפנית</p>
                                         </div>
-                                        <div className="form-floating col-sm mt-4">
-                                            <input name="type" type="text" className="form-control" id="floatingInput" placeholder="סוג החיה" onChange={handleChange} value={values.type} onBlur={handleBlur} />
-                                            <label dir='rtl' for="floatingInput" className="form-label">סוג החיה (כלב/חתול/...)*</label>
-                                            <p className="error-message">{errors.type && touched.type && errors.type}</p>
+
+                                        <div className="form-check form-check-inline ">
+                                            <input name="voilent" className="form-check-input" type="radio" id="inlineRadio1" placeholder="לא" onChange={handleChange} value={values.voilent} />
+                                            <label dir='rtl' className="form-check-label" for="inlineRadio1">לא</label>
+                                        </div>
+                                        <div className="form-check form-check-inline">
+                                            <input name="voilent" className="form-check-input" type="radio" id="inlineRadio2" placeholder="כן" onChange={handleChange} value={values.voilent} />
+                                            <label dir='rtl' className="form-check-label" for="inlineRadio2">כן</label>
                                         </div>
                                     </div>
-
-                                    <button type="button" className="btn btn-primary" onClick={() => {
+                                    <button type="button" className="btn btn-primary mt-3" onClick={() => {
                                         setPage(page + 1)
                                     }}>הבא</button>
                                     <div className='must-asterisk mt-4' dir='rtl'>שדות חובה מסומנים ב*</div>
@@ -188,4 +176,4 @@ const PetForm = ({ }) => {
         </div>
     )
 }
-export default PetForm
+export default AnimalForm

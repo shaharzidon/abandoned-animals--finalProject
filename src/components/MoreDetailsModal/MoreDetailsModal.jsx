@@ -1,7 +1,7 @@
 import { useState } from "react"
-import './modal.css'
+import './moreDetailsModal.css'
 
-const Modal = ({ title, size, addOverflow, btnType, modalButtonName, className, body, children, time }) => {
+const MoreDetailsModal = ({ title, size, addOverflow, btnType, modalButtonName, className, body, children, time }) => {
 
     const [open, setOpen] = useState(false)
 
@@ -16,7 +16,6 @@ const Modal = ({ title, size, addOverflow, btnType, modalButtonName, className, 
     const dotsInDate = removeHyphen.join(".")
 
 
-    console.log(dotsInDate);
     return (
         <div className='modal-container'>
             <button type="button" className={`btn btn-${btnType} ${className}`} onClick={() => { handleOpen() }}>{modalButtonName}</button>
@@ -45,4 +44,4 @@ const Modal = ({ title, size, addOverflow, btnType, modalButtonName, className, 
     )
 }
 
-export default Modal
+export default MoreDetailsModal
